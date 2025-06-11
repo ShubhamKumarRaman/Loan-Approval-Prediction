@@ -33,3 +33,23 @@ form.addEventListener('submit', async (e) => {
         resultDiv.className = 'not-approved';
     }
 });
+
+document.getElementById('dummyBtn').addEventListener('click', function() {
+    const form = document.getElementById('loanForm');
+    form.gender.value = 'Male';
+    form.married.value = 'Yes';
+    form.dependents.value = '1';
+    form.education.value = 'Graduate';
+    form.self_employed.value = 'No';
+    form.applicant_income.value = 6000;
+    form.coapplicant_income.value = 1500;
+    form.loan_amount.value = 120;
+    form.loan_amount_term.value = 360;
+    form.credit_history.value = '1';
+    form.property_area.value = 'Urban';
+    // Set radio buttons
+    form.querySelectorAll('input[type="radio"]').forEach(radio => {
+        if (radio.name === 'married' && radio.value === 'Yes') radio.checked = true;
+        if (radio.name === 'self_employed' && radio.value === 'No') radio.checked = true;
+    });
+});
